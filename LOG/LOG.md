@@ -43,3 +43,9 @@ cam = Camera
 
 ```
 
+```sceneGameObject-hierarchy
+./GameSystems/(scale:1.0 | GridSystem, ConveyorBeltSystem, ResourceManager, InputSystemTowerFactory, ResourceManager, GameManager)
+└ DEBUG_Check (scale:1.0 | DEBUG_Check)
+
+```
+

@@ -170,9 +170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 7, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0.5
+  m_YDamping: 0.5
+  m_ZDamping: 0.5
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0.5
@@ -217,6 +217,144 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &158976292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158976293}
+  - component: {fileID: 158976298}
+  - component: {fileID: 158976297}
+  - component: {fileID: 158976296}
+  - component: {fileID: 158976295}
+  - component: {fileID: 158976300}
+  - component: {fileID: 158976294}
+  m_Layer: 0
+  m_Name: GameSystems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &158976293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158976294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea1408f9918c3a489734e2f7d84b41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSystem: {fileID: 158976298}
+  beltSystem: {fileID: 158976297}
+  resourceManager: {fileID: 158976300}
+  inputSystem: {fileID: 158976295}
+  isPaused: 0
+  gameSpeed: 1
+--- !u!114 &158976295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2eaf913caeeee54a9c204cc262cd4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1941540550}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  buildingLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  raycastMaxDistance: 1000
+--- !u!114 &158976296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e2b8508f68a054eb1e7774efe50034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory:
+    resources: []
+  woodResource: {fileID: 11400000, guid: 3eaf197fbe424f742b2b5da353dd6836, type: 2}
+  startingWood: 50
+  stoneResource: {fileID: 0}
+  startingStone: 50
+--- !u!114 &158976297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919b985293aee5d469d29c4ae4215e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &158976298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d9c725310fced41a0493015dbbe826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 50
+  gridHeight: 50
+  tileSize: 1
+  gridOrigin: {x: 0, y: 0, z: 0}
+--- !u!114 &158976300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158976292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e2b8508f68a054eb1e7774efe50034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory:
+    resources: []
+  woodResource: {fileID: 11400000, guid: e7834bc6840ef6d4d81f812f06d8cdc5, type: 2}
+  startingWood: 50
+  stoneResource: {fileID: 0}
+  startingStone: 50
 --- !u!1 &530589983
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +1084,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1700739720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700739721}
+  - component: {fileID: 1700739722}
+  m_Layer: 0
+  m_Name: DEBUG_Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700739721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700739720}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700739722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700739720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869232c270bbf4542b7906b4a24ba3e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingData: {fileID: 11400000, guid: 12cd7293345e12e4d93747a23377fa26, type: 2}
+  resourceData: {fileID: 11400000, guid: 3eaf197fbe424f742b2b5da353dd6836, type: 2}
 --- !u!1 &1779366084
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +1141,7 @@ GameObject:
   - component: {fileID: 1779366087}
   - component: {fileID: 1779366086}
   - component: {fileID: 1779366085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
