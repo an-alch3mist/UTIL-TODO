@@ -33,7 +33,7 @@ namespace SPACE_GAME
 				Vector3 scale = _prefab.transform.localScale;
 
 				// Check if space is occupied
-				bool isSpaceOccupied = U.CollisionChecker.IsSpaceOccupied(
+				bool isSpaceOccupied = PHY.CollisionChecker.IsSpaceOccupied(
 					_prefab,
 					pos,
 					rotation,
