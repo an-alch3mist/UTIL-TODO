@@ -43,6 +43,7 @@ namespace SPACE_DOODLE_FOURIER
 		}
 
 		[SerializeField] Transform _PTr;
+		[SerializeField] Transform _tipTr;
 		[SerializeField] FourierEpiCycle.Epicycle epicycle;
 		[SerializeField] int _freq = 1;
 		[SerializeField] int _count = 2;
@@ -62,23 +63,26 @@ namespace SPACE_DOODLE_FOURIER
 
 			FourierEpiCycle.InitEpicycles(pathFunc: pathFunc, count: this._count, N: (int)1e2);
 			this.EPICYCLE = FourierEpiCycle.EPICYCLE;
+			this._tipTr.toggle(true);
 
 			float rotAmount = 0f;
-			float speed = 1f/5;
-			for(rotAmount = 0f; rotAmount <= 1f; rotAmount += Time.deltaTime * speed)
+			float speed = 1f / 5;
+			for (rotAmount = 0f; rotAmount <= 2f; rotAmount += Time.deltaTime * speed)
 			{
 				// draw all epicycles >>
 				Vector2 sum = Vector2.zero;
-				foreach(var epicycle in FourierEpiCycle.EPICYCLE)
+				foreach (var epicycle in FourierEpiCycle.EPICYCLE)
 				{
 					Vector2 newPos = epicycle.GetLocalPosAtRotAmount(rotAmount: rotAmount);
-					Line.create(epicycle.freq + "-preview")
-						.setA(sum).setN(newPos)
-						.setE(1f/50)
-						.setCol(Color.red);
+					if (epicycle.freq != 0)
+						Line.create(epicycle.freq + "-preview")
+							.setA(sum).setN(newPos)
+							.setE(1f / 50)
+							.setCol(Color.red);
 					sum += newPos;
 				}
 				// << draw all epicycles
+				this._tipTr.position = sum;
 
 				yield return new WaitForEndOfFrame();
 			}
