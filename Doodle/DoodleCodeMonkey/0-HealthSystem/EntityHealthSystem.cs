@@ -61,8 +61,6 @@ namespace SPACE_DOODLE_CODEMONKEY
 			if (!getIsAlive) return;
 			currentHealth = 0f;
 			currentArmour = 0f;
-			NotifyHealthChanged(currentHealth, maxHealth);
-			NotifyArmourChanged(currentArmour, maxHealth);
 			NotifyDeath();
 		}
 		public override void Revive(float healthAmount)
