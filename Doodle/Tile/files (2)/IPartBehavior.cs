@@ -14,5 +14,5 @@ public interface IPartBehavior
 {
     void OnPlaced(BuildingInstance owner, int partIndex);
     void OnRemoved();
-    void OnMoved() { }   // default-implemented — simple parts can ignore it
+	void OnMoved();  // default-implemented — simple parts can ignore it
 }

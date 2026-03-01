@@ -1,4 +1,5 @@
 using UnityEngine;
+using SPACE_UTIL;
 
 /// <summary>
 /// Attach to every spawned part GameObject (done automatically by BuildingInstance.SpawnParts).

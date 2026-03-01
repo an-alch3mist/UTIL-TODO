@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 /// <summary>
 /// Centralised tick system for all conveyors (and anything else that wants a
 /// fixed game-logic tick separate from Unity's Update).
@@ -47,3 +48,4 @@ public class ConveyorTickSystem : MonoBehaviour
 
     public static void Unregister(ConveyorBelt c) => _conveyors.Remove(c);
 }
+*/
