@@ -6,8 +6,8 @@ namespace SPACE_DOODLE_CODEMONKEY
     public abstract class HealthSystemBase : MonoBehaviour
     {
         public abstract bool getIsAlive { get; }
-		public virtual float getHealthPercent { get; }
-		public virtual float getArmourPercent { get; }
+		public abstract float getHealthPercent { get; }
+		public abstract float getArmourPercent { get; }
 
         public abstract void TakeDamage(float amount);
         public abstract void Heal(float amount);
