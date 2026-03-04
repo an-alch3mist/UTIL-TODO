@@ -6,13 +6,13 @@ namespace SPACE_DOODLE_CODEMONKEY
 	public class HealthSystemDemo : MonoBehaviour
 	{
 		[SerializeField] private HealthSystemBase healthSystem;
-		[SerializeField] private HealthUIBase healthUI;
+		[SerializeField] private HealthReactionBase healthReaction;
 
 		private void Awake()
 		{
 			Debug.Log(C.method(this));
 
-			healthUI.Bind(healthSystem);
+			healthReaction.Bind(healthSystem);
 			healthSystem.OnDeath += () => Debug.Log("Enemy terminated!");
 		}
 

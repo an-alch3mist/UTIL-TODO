@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 1862043045}
-  healthUI: {fileID: 1862043044}
+  healthReaction: {fileID: 1862043044}
 --- !u!1 &2043597709
 GameObject:
   m_ObjectHideFlags: 0

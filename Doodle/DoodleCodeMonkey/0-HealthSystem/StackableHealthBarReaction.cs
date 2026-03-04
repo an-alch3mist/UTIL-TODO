@@ -5,7 +5,7 @@ using SPACE_UTIL;
 
 namespace SPACE_DOODLE_CODEMONKEY
 {
-    public class StackableHealthBarUI : HealthUIBase
+    public class StackableHealthBarReaction : HealthReactionBase
     {
 		[Header("Bar Images (Filled type)")]
 		[SerializeField] Image healthFillImage;
@@ -17,19 +17,22 @@ namespace SPACE_DOODLE_CODEMONKEY
 
 		[Header("Smooth Fill")]
 		[SerializeField] float lerpSpeed = 8f;
-
 		private void Update()
 		{
+			// lerp >>
 			healthFillImage.fillAmount = Mathf.Lerp(healthFillImage.fillAmount, targetHealthAmount, Time.deltaTime * lerpSpeed);
-			healthFillImage.color = Color.Lerp(HealthLow, HealthHigh, healthFillImage.fillAmount);
-
 			armourFillImage.fillAmount = Mathf.Lerp(armourFillImage.fillAmount, targetArmourAmount, Time.deltaTime * lerpSpeed);
+			// << lerp
+
+			// update UI >>
+			healthFillImage.color = Color.Lerp(HealthLow, HealthHigh, healthFillImage.fillAmount);
 			armourFillImage.color = Color.Lerp(ArmourGone, ArmourFull, armourFillImage.fillAmount);
 			//
 			if (armourFillImage.fillAmount.zero(1E-2))
 				armourFillImage.Q().upNamed("outline").gf().toggle(false);
 			else
 				armourFillImage.Q().upNamed("outline").gf().toggle(true);
+			// << update UI
 		}
 	}
 }

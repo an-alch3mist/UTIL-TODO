@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace SPACE_DOODLE_CODEMONKEY
 {
-	public abstract class HealthUIBase : MonoBehaviour
+	public abstract class HealthReactionBase : MonoBehaviour
 	{
 		protected HealthSystemBase hSystem { get; private set; }
 		protected float targetHealthAmount;
