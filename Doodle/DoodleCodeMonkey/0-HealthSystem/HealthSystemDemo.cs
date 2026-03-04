@@ -24,7 +24,7 @@ namespace SPACE_DOODLE_CODEMONKEY
 			if (Input.GetKeyDown(KeyCode.W)) healthSystem.Heal(20f);
 			if (Input.GetKeyDown(KeyCode.E)) healthSystem.RepairArmour(20f);
 			if (Input.GetKeyDown(KeyCode.T)) healthSystem.Kill();
-			if (Input.GetKeyDown(KeyCode.R)) healthSystem.Revive(50f);
+			if (Input.GetKeyDown(KeyCode.R)) healthSystem.Revive(healthSystem.MaxHealth * 1f / 2);
 		}
 	}
 }

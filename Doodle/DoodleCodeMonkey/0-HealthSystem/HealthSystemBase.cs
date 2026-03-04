@@ -6,15 +6,15 @@ namespace SPACE_DOODLE_CODEMONKEY
 	public abstract class HealthSystemBase : MonoBehaviour
 	{
 		// ── Abstract max values — each concrete class defines these ────────
-		protected abstract float MaxHealth { get; }
-		protected abstract float MaxArmour { get; }
+		public abstract float MaxHealth { get; }
+		public abstract float MaxArmour { get; }
 
 		// ── Runtime state — owned here ─────────────────────────────────────
 		protected float currentHealth;
 		protected float currentArmour;
 
 		// ── Init helper — reads from abstract properties, no args needed ───
-		protected void InitialiseHealth()
+		protected void InitCurrHealthArmour()
 		{
 			currentHealth = MaxHealth;
 			currentArmour = MaxArmour;
