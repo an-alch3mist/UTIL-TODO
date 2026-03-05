@@ -15,8 +15,8 @@ namespace SPACE_DOODLE_CODEMONKEY
         [SerializeField] private float regenRate    = 5f;  // HP per second while alive
         [SerializeField] private float reviveDelay  = 4f;  // seconds before auto-revive
 
-		public override float MaxHealth => startMaxHealth;
-		public override float MaxArmour => 0f;
+		protected override float MaxHealth => startMaxHealth;
+		protected override float MaxArmour => 0f;
 
         private float deadTimer;
 
@@ -31,22 +31,15 @@ namespace SPACE_DOODLE_CODEMONKEY
 		{
 			if (getIsAlive == false)
 			{
-				Debug.Log($"deadTimerWhenDead: {deadTimer} ");
+				// Debug.Log($"deadTimerWhenDead: {deadTimer} ");
 				deadTimer -= Time.deltaTime;
 				
 				if (deadTimer <= 0f)
 					Revive(50f);
 				
 			}
-			Debug.Log($"deadTimer when alive: {deadTimer} ");
+			// Debug.Log($"deadTimer when alive: {deadTimer} ");
 		}
-
-        public override void Kill()
-        {
-            base.Kill();
-			Debug.Log("deadTimerReset".colorTag("orange"));
-            deadTimer = reviveDelay;
-        }
         public override void RepairArmour(float amount) { } // no armour
     }
 }

@@ -14,8 +14,8 @@ namespace SPACE_DOODLE_CODEMONKEY
 		[Header("Armour")] [SerializeField] private float startMaxArmour = 50f;
 
 		// ── Contract — base reads these, never the raw serialized fields ───
-		public override float MaxHealth => startMaxHealth;
-		public override float MaxArmour => startMaxArmour;
+		protected override float MaxHealth => startMaxHealth;
+		protected override float MaxArmour => startMaxArmour;
 		private void Awake()
 		{
 			Debug.Log(C.method(this));
@@ -25,10 +25,6 @@ namespace SPACE_DOODLE_CODEMONKEY
 		public override void Heal(float amount)
 		{
 			base.Heal(amount);
-		}
-		public override void Kill()
-		{
-			base.Kill();
 		}
 		public override void RepairArmour(float amount)
 		{

@@ -12,8 +12,8 @@ namespace SPACE_DOODLE_CODEMONKEY
         [Header("Health")]
         [SerializeField] private float startMaxHealth = 30f;
 
-        public override float MaxHealth => startMaxHealth;
-        public override float MaxArmour => 0f;
+        protected override float MaxHealth => startMaxHealth;
+        protected override float MaxArmour => 0f;
 
         private void Awake()
         {

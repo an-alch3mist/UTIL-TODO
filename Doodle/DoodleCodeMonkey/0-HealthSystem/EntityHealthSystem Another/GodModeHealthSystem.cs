@@ -10,8 +10,8 @@ namespace SPACE_DOODLE_CODEMONKEY
     /// </summary>
     public class GodModeHealthSystem : HealthSystemBase
     {
-		public override float MaxHealth => 1f;
-		public override float MaxArmour => 0f;
+		protected override float MaxHealth => 1f;
+		protected override float MaxArmour => 0f;
 
         private void Awake()
         {
@@ -26,7 +26,6 @@ namespace SPACE_DOODLE_CODEMONKEY
 
         // ── All commands are intentional no-ops ────────────────────────────
         public override void TakeDamage(float amount)  { }
-        public override void Kill()                    { }
         public override void Heal(float amount)         { }
         public override void RepairArmour(float amount) { }
         public override void Revive(float healthAmount) { }

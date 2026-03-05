@@ -10,8 +10,8 @@ namespace SPACE_DOODLE_CODEMONKEY
     /// </summary>
     public class NetworkHealthSystem : HealthSystemBase
     {
-		public override float MaxHealth => 100f; // overwritten on first server sync
-		public override float MaxArmour => 50f;  // overwritten on first server sync
+		protected override float MaxHealth => 100f; // overwritten on first server sync
+		protected override float MaxArmour => 50f;  // overwritten on first server sync
 
         private void Awake()
         {
@@ -41,7 +41,6 @@ namespace SPACE_DOODLE_CODEMONKEY
         public override void TakeDamage(float amount)  { }
         public override void Heal(float amount)         { }
         public override void RepairArmour(float amount) { }
-        public override void Kill()                    { }
         public override void Revive(float healthAmount) { }
     }
 }
