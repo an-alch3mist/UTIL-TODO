@@ -32,7 +32,7 @@ namespace SPACE_DOODLE_CODEMONKEY
                 return;
             }
             currentArmour = Mathf.Min(currentArmour + rechargeRate * Time.deltaTime, MaxArmour);
-            NotifyArmourChanged(currentArmour, MaxArmour);
+            NotifyArmourChanged();
         }
 
 		protected override float MaxHealth => startMaxHealth;

@@ -5,8 +5,8 @@ using SPACE_UTIL;
 
 namespace SPACE_DOODLE_CODEMONKEY
 {
-    public class StackableHealthBarReaction : HealthReactionBase
-    {
+	public class StackableHealthBarReaction : HealthReactionBase
+	{
 		[Header("Bar Images (Filled type)")]
 		[SerializeField] Image healthFillImage;
 		[SerializeField] Image armourFillImage;
@@ -19,6 +19,7 @@ namespace SPACE_DOODLE_CODEMONKEY
 		[SerializeField] float lerpSpeed = 8f;
 		private void Update()
 		{
+
 			// lerp >>
 			healthFillImage.fillAmount = Mathf.Lerp(healthFillImage.fillAmount, targetHealthAmount, Time.deltaTime * lerpSpeed);
 			armourFillImage.fillAmount = Mathf.Lerp(armourFillImage.fillAmount, targetArmourAmount, Time.deltaTime * lerpSpeed);
@@ -34,5 +35,6 @@ namespace SPACE_DOODLE_CODEMONKEY
 				armourFillImage.Q().upNamed("outline").gf().toggle(true);
 			// << update UI
 		}
+		// private void OnDestroy() => Unbind();
 	}
 }

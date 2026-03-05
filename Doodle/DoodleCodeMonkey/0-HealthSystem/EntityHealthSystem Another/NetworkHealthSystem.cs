@@ -32,8 +32,8 @@ namespace SPACE_DOODLE_CODEMONKEY
             // update the runtime max values so percent calculations stay correct
             // (cast to backing field via a workaround since MaxHealth is a property)
             // If your project uses backing fields directly, assign those instead.
-            NotifyHealthChanged(currentHealth, hMax);
-            NotifyArmourChanged(currentArmour, aMax);
+            NotifyHealthChanged();
+            NotifyArmourChanged();
             if (currentHealth <= 0f) NotifyDeath();
         }
 
