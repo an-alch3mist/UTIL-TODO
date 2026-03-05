@@ -24,28 +24,29 @@ namespace SPACE_DOODLE_CODEMONKEY
         {
             Debug.Log(C.method(this));
             InitCurrHealthArmour();
+			this.OnDeath += () => { deadTimer = reviveDelay; };
         }
 
-        public override void RepairArmour(float amount) { } // no armour
-
-        private void Update()
-        {
-            if (!getIsAlive)
-            {
-                deadTimer -= Time.deltaTime;
-                if (deadTimer <= 0f) Revive(1f);
-                return;
-            }
-
-            if (currentHealth >= MaxHealth) return;
-            currentHealth = Mathf.Min(currentHealth + regenRate * Time.deltaTime, MaxHealth);
-            NotifyHealthChanged(currentHealth, MaxHealth);
-        }
+		private void Update()
+		{
+			if (getIsAlive == false)
+			{
+				Debug.Log($"deadTimerWhenDead: {deadTimer} ");
+				deadTimer -= Time.deltaTime;
+				
+				if (deadTimer <= 0f)
+					Revive(50f);
+				
+			}
+			Debug.Log($"deadTimer when alive: {deadTimer} ");
+		}
 
         public override void Kill()
         {
             base.Kill();
+			Debug.Log("deadTimerReset".colorTag("orange"));
             deadTimer = reviveDelay;
         }
+        public override void RepairArmour(float amount) { } // no armour
     }
 }

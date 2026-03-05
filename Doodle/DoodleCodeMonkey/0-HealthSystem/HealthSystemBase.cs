@@ -72,7 +72,7 @@ namespace SPACE_DOODLE_CODEMONKEY
 
 		public virtual void Revive(float healthAmount)
 		{
-			if (getIsAlive) return;
+			if (getIsAlive == true) return;
 			currentHealth = Mathf.Clamp(healthAmount, 1f, MaxHealth);
 			NotifyHealthChanged(currentHealth, MaxHealth);
 			NotifyArmourChanged(currentArmour, MaxArmour);
